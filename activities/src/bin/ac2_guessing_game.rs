@@ -2,15 +2,14 @@ use std::io;
 // The "Rng" trait defines methods that random numbers generators implement, and this trait must be in scope for us to use those methods.
 use rand::Rng;
 // like Result, Ordering is another enum with the variants: Less, Greater, Equal
-// the cmp method compares two values and it takes a reference to whatever you want to compare with.
-// Then it returns a variant of the Ordering enum we brought into the scope with the use statement
 use std::cmp::Ordering;
 
 fn main() {
     println!("Guess the number!");
 
     // generating a random number
-    let secret_number = rand::thread_rng().gen_range(1..=10);
+    // the gen_range(defined by the Rng trait) takes a range expression as arg and generates a random number in the range
+    let secret_number = rand::thread_rng().gen_range(1..=100);
 
     loop {
         println!("Please input your guess:");
@@ -27,7 +26,7 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line!");
 
-        // "shadowing" lets us reuse the guess variable name rather than forcing us to create two uniquw variables,
+        // "shadowing" lets us reuse the guess variable name rather than forcing us to create two unique variables,
         // such as guess_str and guess
         // the parse method converts a string to another type and we need to tell Rust the exact type number we want by using u32
         // the call to parse could easily return an error and because of that the parse method returns a Result type
@@ -41,6 +40,8 @@ fn main() {
 
         println!("You guessed: {guess}");
 
+        // the cmp method compares two values and it takes a reference to whatever you want to compare with.
+        // Then it returns a variant of the Ordering enum we brought into the scope with the use statement
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
