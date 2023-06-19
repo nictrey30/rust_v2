@@ -19,7 +19,8 @@ fn main() {
     // accesing a tuple by . notation
     println!("The value of z from the tuple is : {}", z);
 
-    // the array type, unlike the tuple, every element of the array has the same type
+    // the array type, unlike the tuple, every element of the array has the same type and a fixed length
+    // arrays are allocated on the stack
     let a: [i32; 5] = [1, 2, 3, 4, 5];
     println!("{:?}", a);
 }
