@@ -52,4 +52,13 @@ fn main() {
     }
 
     // for loops
+    let a = [10, 20, 30, 40, 50];
+    for el in a {
+        println!("the value is: {el}");
+    }
+
+    println!("using for loop with range:");
+    for number in (1..5).rev() {
+        println!("{number}");
+    }
 }
