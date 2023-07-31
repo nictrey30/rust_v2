@@ -1,3 +1,5 @@
+use core::num;
+
 fn main() {
     // because if is an expression, we can use it on the right side of a let statement
     let condition = true;
@@ -20,4 +22,36 @@ fn main() {
         }
     }; // after the loop we use a semicolon to end the statement that assigns the value to "result"
     println!("The result is {result}");
+
+    // loop labels
+    // if you have loops within loops, break apply to the most inner loop at that point.
+    // You can optionally specify a loop label to break/continue that specified loop
+
+    let mut counter_2 = 0;
+    'counting_up: loop {
+        println!("count: {counter_2}");
+        let mut remaining = 10;
+
+        loop {
+            println!("remaining: {remaining}");
+            if remaining == 9 {
+                break;
+            }
+            if counter_2 == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1;
+        }
+        counter_2 += 1;
+    }
+    println!("End count: {counter_2}");
+
+    // while - while condition evaluates to "true", the code runs; otherwise it exits the loop
+    let mut number = 3;
+    while number != 0 {
+        println!("{number}");
+        number -= 1;
+    }
+
+    // for loops
 }
