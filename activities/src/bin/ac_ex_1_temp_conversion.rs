@@ -24,6 +24,7 @@ fn main() {
                 .read_line(&mut input)
                 .expect("Failed to read the line.");
 
+            // the chars() method of a string returns an iterator of characters which make up a string. The iterator returned allows us to loop througheach character of the string
             if input.trim().chars().count() < 2 {
                 let char_vec: Vec<char> = input.trim().chars().collect();
                 let ch = char_vec[0];
