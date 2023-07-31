@@ -1,5 +1,3 @@
-use core::num;
-
 fn main() {
     // because if is an expression, we can use it on the right side of a let statement
     let condition = true;
