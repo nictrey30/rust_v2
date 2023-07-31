@@ -18,7 +18,7 @@ fn main() {
     }
 }
 fn day_intro(verse_num: u32) {
-    let mut day = match verse_num {
+    let day = match verse_num {
         1 => "first",
         2 => "second",
         3 => "third",
