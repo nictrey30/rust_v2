@@ -20,7 +20,16 @@ fn main() {
     // Both data pointers point to the same location on the heap.
     // when s1 and s2 goes out of scope, they will both try to free the same memory(bug aka double free error)
 
-    let s2 = s1;
+    let s2 = s1; // value moved here
+
     // to ensure memory safety, after the line s2 = s1; Rusts considers s1 no longer valid
     // println("{s1}"); - won't work
+
+    // move - instead of a shallow copy, because Rust also invalidates the data
+
+    // clone - if we do want to deeply copy the heap data, not just the stack data
+    let s3 = s2.clone();
+
+    // if a type implements the Copy trait, variables that use it do not move, making them still valid after assignment to another variable.
+    // Rust won't lt us annotate atype with Copy if the type, or any of its parts, has implemented the Drop trait.
 }
