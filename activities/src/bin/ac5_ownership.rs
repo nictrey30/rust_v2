@@ -28,7 +28,7 @@ fn main() {
     // move - instead of a shallow copy, because Rust also invalidates the data
 
     // clone - if we do want to deeply copy the heap data, not just the stack data
-    let s3 = s2.clone();
+    let _s3 = s2.clone();
 
     // if a type implements the Copy trait, variables that use it do not move, making them still valid after assignment to another variable.
     // Rust won't lt us annotate atype with Copy if the type, or any of its parts, has implemented the Drop trait.
