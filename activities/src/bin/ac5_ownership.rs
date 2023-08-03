@@ -31,5 +31,5 @@ fn main() {
     let _s3 = s2.clone();
 
     // if a type implements the Copy trait, variables that use it do not move, making them still valid after assignment to another variable.
-    // Rust won't lt us annotate atype with Copy if the type, or any of its parts, has implemented the Drop trait.
+    // Rust won't lt us annotate a type with Copy if the type, or any of its parts, has implemented the Drop trait.
 }
