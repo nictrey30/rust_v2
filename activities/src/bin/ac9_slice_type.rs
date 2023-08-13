@@ -5,7 +5,8 @@ fn main() {
     // a string slice is a reference to a part of a String
     let s = String::from("hello world");
 
-    let word = first_word(&s);
+    // let word = first_word(&s); // - first_word works on references to Strings, which are equivalent to whole slices of Strings
+    let word = first_word(&s[..]);
 
     // s.clear(); // error!,   -- immutable borrow occurs first_word(&s), and mutable borrow occurs s.clear()
 
@@ -16,7 +17,10 @@ fn main() {
 // if there is no space, the whole string should be returned
 
 // the first_word function has a parameter &String(we don't want ownership)
-fn first_word(s: &String) -> &str {
+// it returns a string slice type(a slice is a kind of reference, so it does)
+// fn first_word(s: &String) -> &str {
+// if we have a string slice, we can pass that directly.If we have a String, we can pass a lice of the String or a reference to the String
+fn first_word(s: &str) -> &str {
     // because we need to go through the String element by element and check whether a value is a space,
     // we'' convert our String to an array of bytes
     let bytes = s.as_bytes();
