@@ -3,11 +3,14 @@
 
 fn main() {
     // a string slice is a reference to a part of a String
-    let mut s = String::from("hello world");
+    let s = String::from("hello world");
 
     let word = first_word(&s);
 
     // s.clear(); // error!,   -- immutable borrow occurs first_word(&s), and mutable borrow occurs s.clear()
+
+    // the println after the call to clear uses the reference in word, so the immutable reference must still be active at that point
+    println!("The first word is: {word}");
 }
 // write a function that takes a string of words separated by spaces and returns the first word it finds in that string.
 // if there is no space, the whole string should be returned
