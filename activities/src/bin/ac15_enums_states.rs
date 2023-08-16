@@ -59,7 +59,12 @@ enum Coin {
     Dime,
     Quarter(UsState),
 }
-fn main() {}
+fn main() {
+    let five = Some(5);
+    let six = plus_one(five);
+    let none = plus_one(None);
+    println!("six: {:?}, none: {:?}", six, none);
+}
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
         Coin::Penny => 1,
@@ -71,5 +76,13 @@ fn value_in_cents(coin: Coin) -> u8 {
             println!("State quarter from {:?}", state);
             25
         }
+    }
+}
+// write a function that takes an Option<i32> and, if there is a value inside, adds 1 to the value.
+fn plus_one(x: Option<i32>) -> Option<i32> {
+    match x {
+        None => None,
+        // if this arm matches, then i binds to  the value contained in Some
+        Some(i) => Some(i + 1),
     }
 }
