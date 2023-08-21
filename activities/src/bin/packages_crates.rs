@@ -128,3 +128,13 @@ pub fn eat_at_restaurant() {
     // relative path, starting with a module name means that the path is relative
     front_of_house::hosting::add_to_waitlist();
 }
+// Alternate File Paths
+// So far we’ve covered the most idiomatic file paths the Rust compiler uses, but Rust also supports an older style of file path. For a module named front_of_house declared in the crate root, the compiler will look for the module’s code in:
+// src/front_of_house.rs (what we covered)
+// src/front_of_house/mod.rs (older style, still supported path)
+
+// For a module named hosting that is a submodule of front_of_house, the compiler will look for the module’s code in:
+// src/front_of_house/hosting.rs (what we covered)
+// src/front_of_house/hosting/mod.rs (older style, still supported path)
+
+// If you use both styles for the same module, you’ll get a compiler error. Using a mix of both styles for different modules in the same project is allowed, but might be confusing for people navigating your project. The main downside to the style that uses files named mod.rs is that your project can end up with many files named mod.rs, which can get confusing when you have them open in your editor at the same time.
