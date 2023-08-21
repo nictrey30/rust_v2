@@ -42,7 +42,7 @@
 
 // Paths and referring to an item in the module tree
 // A path can take 2 forms:
-// An absolute path is the full path starting from a crate root; for code from an external crate, the absolute path begins with the crate name, and for code from the current crate, it starts with the literal crate.fn
+// An absolute path is the full path starting from a crate root; for code from an external crate, the absolute path begins with the crate name, and for code from the current crate, it starts with the literal crate.
 // A relative path starts from the current module and uses: self, super, or an indentifier in the current module.
 
 // In Rust, all items(functions, methods, structs, enums, modules and constants) are private to the parent modules by default. If you want to make an item like a function or struct private, you put it in a module.
@@ -50,18 +50,8 @@
 // Items in a parent module can't use the private items inside child modules, but items in child modules can use the items in their ancestor modules. However, Rust does give you the option to expose inner parts of child modules' code to outer ancestor modules by uising the pub keyword to make an item public.
 
 // the body of the module goes inside {}
-// Inside modules, we can place other modules. Modules can also hold definitions for other items such as structs, enums, constants, traits and functions.fn
+// Inside modules, we can place other modules. Modules can also hold definitions for other items such as structs, enums, constants, traits and functions.
 
-// src/lib.rs and src/main.rs are called crate roots, because the contents of either these two files form a module named crate at the root of crate's module structure, known as the module tree.
-
-// Paths and referring to an item in the module tree
-// A path can take 2 forms:
-// An absolute path is the full path starting from a crate root; for code from an external crate, the absolute path begins with the crate name, and for code from the current crate, it starts with the literal crate.fn
-// A relative path starts from the current module and uses: self, super, or an indentifier in the current module.
-
-// In Rust, all items(functions, methods, structs, enums, modules and constants) are private to the parent modules by default. If you want to make an item like a function or struct private, you put it in a module.
-
-// Items in a parent module can't use the private items inside child modules, but items in child modules can use the items in their ancestor modules. However, Rust does give you the option to expose inner parts of child modules' code to outer ancestor modules by uising the pub keyword to make an item public.
 fn main() {}
 mod front_of_house {
     // The pub keyword on a module only lets code in its ancestor modules refer to it, not access its inner code, so we need to go further and choose to make one or more of the items within the module public as well.
