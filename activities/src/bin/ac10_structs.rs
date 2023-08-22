@@ -11,7 +11,7 @@ struct User {
 // using tuple structs without named fields to create diffrent types
 struct Color(i32, i32, i32);
 struct Point(i32, i32, i32);
-// uni-like structs - can be useful when you need to implement a trait on some type but you don't have any data that you want to store in the type itself
+// unlike structs - can be useful when you need to implement a trait on some type but you don't have any data that you want to store in the type itself
 struct AlwaysEqual;
 
 fn main() {
