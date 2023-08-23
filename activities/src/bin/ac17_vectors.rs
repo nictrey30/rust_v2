@@ -25,4 +25,35 @@ fn main() {
     for i in &v2 {
         println!("{i}");
     }
+    // we can also iterate over mutable references to each element in order to make changes to all the elements
+    for i in &mut v2 {
+        // to change the value that the mutable reference refers to, we have to use the * deference operator to get to the value in i before we can use the += operator.
+        *i += 50;
+    }
+
+    // Using an enum to store multiple types
+    // Vectors can only store values that are of the same type. Fortunately, the variants of an enum are defined under the same enum type, so when we need one type to represent elements of diffrent types, we can define and use an enum.
+    #[derive(Debug)]
+    // Rust needs to know what types will be in the vector at compile time so it knows exactly how much mem on the heap will be needed to store each element
+    enum SpreadsheetCell {
+        Int(i32),
+        Float(f64),
+        Text(String),
+    }
+
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Text(String::from("blue")),
+        SpreadsheetCell::Float(10.12),
+    ];
+
+    for i in &row {
+        println!("{:?}", i);
+    }
+
+    // dropping a vector drops its elements
+    {
+        let v = vec![1, 2, 3, 4];
+        // do stuff with v
+    } // <- v goes out of scope here and its elements are dropped
 }
