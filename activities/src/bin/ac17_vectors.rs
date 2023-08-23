@@ -53,7 +53,7 @@ fn main() {
 
     // dropping a vector drops its elements
     {
-        let v = vec![1, 2, 3, 4];
+        let _v = vec![1, 2, 3, 4];
         // do stuff with v
     } // <- v goes out of scope here and its elements are dropped
 }
