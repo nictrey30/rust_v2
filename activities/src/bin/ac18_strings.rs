@@ -28,6 +28,11 @@ fn main() {
     // we’re adding a reference of the second string to the first string. This is because of the s parameter in the add function: we can only add a &str to a String; we can’t add two String values together.
     // The reason we’re able to use &s5 in the call to add is that the compiler can coerce the &String argument into a &str. When we call the add method, Rust uses a deref coercion, which here turns &s5 into &s5[..].
     // Second, we can see in the signature that add takes ownership of self because self does not have an &. This means s4 will be moved into the add call and will no longer be valid after that. So, although let s6 = s4 + &s5; looks like it will copy both strings and create a new one, this statement actually takes ownership of s4, appends a copy of the contents of s5, and then returns ownership of the result.
-
     println!("s6: {s6}");
+    let s7 = String::from("tic");
+    let s8 = String::from("tac");
+    let s9 = String::from("toe");
+    // for combining strings in more complicated ways, we can use the format! macro
+    let s10 = format!("{s7}-{s8}-{s9}");
+    println!("s10: {s10}");
 }
