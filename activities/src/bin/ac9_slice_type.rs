@@ -19,10 +19,10 @@ fn main() {
 // the first_word function has a parameter &String(we don't want ownership)
 // it returns a string slice type(a slice is a kind of reference, so it does)
 // fn first_word(s: &String) -> &str {
-// if we have a string slice, we can pass that directly.If we have a String, we can pass a lice of the String or a reference to the String
+// if we have a string slice, we can pass that directly. If we have a String, we can pass a slice of the String or a reference to the String
 fn first_word(s: &str) -> &str {
     // because we need to go through the String element by element and check whether a value is a space,
-    // we'' convert our String to an array of bytes
+    // we'll convert our String to an array of bytes
     let bytes = s.as_bytes();
 
     // the iter method returns each element in a collection, and enumerate wraps the result of iter and returns each element as a part of a tuple instead
