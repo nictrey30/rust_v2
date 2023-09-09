@@ -2,7 +2,7 @@ use std::collections::HashMap;
 // just like vectors, hash maps storetheir data on the heap.
 fn main() {
     // Storing keys with associated values in hash maps
-    // The type HashMap<K, V> stores a mapping of keys of type K to valueas of type V using a hashing function.
+    // The type HashMap<K, V> stores a mapping of keys of type K to values of type V using a hashing function.
     // Hash maps are useful when you want to look up data not by using an index, as you can with vectors, but by using a key that can be of any type.
 
     // Creating a new hash map
@@ -25,7 +25,7 @@ fn main() {
     }
 
     // Hash maps and ownership
-    // For types that implement the Copy trait, like i32, the values are copied into the hash map. For ones like String, the values will be movedand the hash map will be the owner of those values.
+    // For types that implement the Copy trait, like i32, the values are copied into the hash map. For ones like String, the values will be moved and the hash map will be the owner of those values.
     let field_name = String::from("Favorite Color");
     let field_value = String::from("Blue");
     let mut map = HashMap::new();
