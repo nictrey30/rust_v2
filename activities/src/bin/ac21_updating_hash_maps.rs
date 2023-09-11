@@ -21,4 +21,16 @@ fn main() {
 
     // Updating a value based on the old value
     // Another common use case for hash maps is to look up a key's value and then update it based on the old value.
+    let text = "hello world wonderful world";
+    let mut map = HashMap::new();
+    // using ahash map with the words as keys and increment the value of how many tines tha tword appears
+
+    // split_whitespace() returns an iterator over subslices, separated by whitespace
+    for word in text.split_whitespace() {
+        // the or_insert method returns a mutable reference (&mut v) to the value for the specified key.
+        let count = map.entry(word).or_insert(0);
+        // we store the returned mutable reference in the count variable, so in order to assign to that value, we must first deference it.
+        *count += 1;
+    }
+    println!("{:?}", map);
 }
