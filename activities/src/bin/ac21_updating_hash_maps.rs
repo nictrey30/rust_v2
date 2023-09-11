@@ -18,4 +18,7 @@ fn main() {
     scores.entry(String::from("Blue")).or_insert(50); // {"Yellow": 50, "Blue": 10}
 
     println!("{:?}", scores);
+
+    // Updating a value based on the old value
+    // Another common use case for hash maps is to look up a key's value and then update it based on the old value.
 }
