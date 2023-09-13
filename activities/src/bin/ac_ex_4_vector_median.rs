@@ -3,21 +3,13 @@
 use rand::Rng;
 use std::collections::HashMap;
 use std::io;
-use std::io::Write;
 
 fn main() {
-    let mut my_list: Vec<i32> = Vec::new();
+    let my_list: Vec<i32>;
     if return_answer() == true {
-        let num_elements = number_of_integers();
-        println!("The num of elements is {num_elements}");
-        for _i in 0..num_elements {
-            my_list.push(rand::thread_rng().gen_range(-100..=100));
-        }
-        println!("The vector elements:");
-        for i in &my_list {
-            println!("{i}");
-            io::stdout().flush().expect("Something went wrong");
-        }
+        my_list = generate_vector();
+    } else {
+        my_list = vec![1, 2, 3];
     }
     // println!("The median of the vector: {}", vector_median(&my_list));
     // vector_mode(&my_list);
@@ -91,3 +83,13 @@ fn vector_mode(vect: &Vec<i32>) {
     }
     println!("{:?}", map);
 }
+fn generate_vector() -> Vec<i32> {
+    let mut my_list: Vec<i32> = Vec::new();
+    let num_elements = number_of_integers();
+    println!("The num of elements is {num_elements}");
+    for i in 0..num_elements {
+        my_list.push(rand::thread_rng().gen_range(-100..=100));
+    }
+    my_list
+}
+fn input_vector() {}
