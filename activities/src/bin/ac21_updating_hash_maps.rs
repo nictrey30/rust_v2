@@ -10,7 +10,7 @@ fn main() {
     scores.insert(String::from("Blue"), 10);
 
     // Adding a key and a value only if a key isn't present
-    // It's comon to check whether a particular key already exists in the hash map with a value and then to take the following actions: if the key does exist in the hash map, the existing value should remain the way it is; if the key doesn't exist, insert it and a value for it.
+    // It's common to check whether a particular key already exists in the hash map with a value and then to take the following actions: if the key does exist in the hash map, the existing value should remain the way it is; if the key doesn't exist, insert it and a value for it.
     // Hash maps have a special API -> entry, that takes the key you want to check as a a parameter. The return value of the entry method is an enum called Entry that represents a value that might or might not exist.
 
     // the or_insert method on Entry is defined to return a mutable reference to the value for the corresponding Entry key if that key exists, and if not, it inserts the parameter as the new value for this key and returns a mutable reference to the new value.
