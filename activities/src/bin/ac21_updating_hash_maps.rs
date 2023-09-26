@@ -23,7 +23,7 @@ fn main() {
     // Another common use case for hash maps is to look up a key's value and then update it based on the old value.
     let text = "hello world wonderful world";
     let mut map = HashMap::new();
-    // using ahash map with the words as keys and increment the value of how many tines tha tword appears
+    // using a hash map with the words as keys and increment the value of how many tines the word appears
 
     // split_whitespace() returns an iterator over subslices, separated by whitespace
     for word in text.split_whitespace() {
