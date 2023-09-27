@@ -1,6 +1,6 @@
 // adding the attribute to derive debug trait and printing the Rectangle instance using debug formatting
 #[derive(Debug)]
-// calculate the area of a recangle
+// calculate the area of a rectangle
 struct Rectangle {
     width: u32,
     height: u32,
