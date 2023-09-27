@@ -1,7 +1,7 @@
 // struct - custom data type that lets you package together and name multiple related values that make up a meaningful group
 struct User {
     active: bool,
-    // in the User struct definition, we used the owned String rather than athe string slice type .&str
+    // in the User struct definition, we used the owned String rather than the string slice type .&str
     // this is deliberate, because we want each instance of this struct to own all of its data
     // it is also possible for structs to store references to data owned by something else, but to do so require the use of lifetimes
     username: String,
@@ -11,7 +11,7 @@ struct User {
 // using tuple structs without named fields to create diffrent types
 struct Color(i32, i32, i32);
 struct Point(i32, i32, i32);
-// unlike structs - can be useful when you need to implement a trait on some type but you don't have any data that you want to store in the type itself
+// structs - can be useful when you need to implement a trait on some type but you don't have any data that you want to store in the type itself
 struct AlwaysEqual;
 
 fn main() {
