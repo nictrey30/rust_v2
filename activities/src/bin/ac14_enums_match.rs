@@ -44,7 +44,7 @@ enum Coin {
 fn main() {}
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
-        // the code associated with eac arm is an expression, and the resultant value of the expression in the matching arm is the value that gets returned from the entire match expression.
+        // the code associated with each arm is an expression, and the resultant value of the expression in the matching arm is the value that gets returned from the entire match expression.
         Coin::Penny => 1,
         Coin::Nickel => 5,
         Coin::Dime => 10,
