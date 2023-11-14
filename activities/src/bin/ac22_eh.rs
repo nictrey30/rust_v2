@@ -7,7 +7,7 @@ fn main() {
     // v[99];
 
     // File::open returns a Result value because the function could fail
-    // The return type of File::open is a Result<T, E>. The generic parameter T has been filled in by the implementation of File::open with the type of the success value, std::fs::File, which is a file handle. The type of E used in the error value is std::io::Error.
+    // The type of the value that File::open returns inside the Err variant is an io::Error, which is a struct provided by the standard library. This struct has a methond kind that we can call to get an io:ErrorKind value.
     let greeting_file_result = File::open("hello.txt");
 
     // this code will panic! no matter what why File::open failed
