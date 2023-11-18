@@ -1,3 +1,4 @@
+#![allow(dead_code, unused_variables)]
 // Packages and Crates
 // A crate is the smallest amount of code that Rust compiler considers at time.
 // A crate can come in one of two forms: a binary crate or a library crate. Binary crates are programs you can compile to an executable that you can run, such as a CLI or a server. Each must have a function called main that defines what happens when the executable runs.

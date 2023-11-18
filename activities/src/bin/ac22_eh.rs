@@ -1,3 +1,5 @@
+#![allow(dead_code, unused_variables)]
+
 use std::fs::File;
 // the enum io::ErrorKind has variants representing the diffrent kinds of errors that might result from an io operation
 use std::io::ErrorKind;

@@ -1,3 +1,5 @@
+
+#![allow(dead_code, unused_variables)]
 // enums allow you to define a type by enumerating its possible variants, giving you a way to say a value is one of possible set of values
 // Option enum - expresses that a value can be either something or nothing
 

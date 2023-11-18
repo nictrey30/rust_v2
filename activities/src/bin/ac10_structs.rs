@@ -1,3 +1,4 @@
+#![allow(dead_code, unused_variables)]
 // struct - custom data type that lets you package together and name multiple related values that make up a meaningful group
 struct User {
     active: bool,

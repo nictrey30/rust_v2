@@ -1,3 +1,5 @@
+#![allow(dead_code, unused_variables, non_camel_case_types)]
+
 // enums - match, patterns that bind to values
 // match arms can bind to the parts of the values that match the pattern. This is how we can extract values out of enum variants.
 #[derive(Debug)]

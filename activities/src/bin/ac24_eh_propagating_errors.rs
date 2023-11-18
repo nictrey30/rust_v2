@@ -1,3 +1,5 @@
+#![allow(dead_code, unused_variables, unused_imports)]
+
 use std::error::Error;
 // when a function's implementation calls something that might fail, instead of handling the error within the function itself,
 // you can return the error to the calling code so that it can decide what to do.
