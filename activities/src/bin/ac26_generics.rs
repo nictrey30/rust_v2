@@ -23,6 +23,23 @@ struct Point<T> {
     y: T,
 }
 
+// generics in method definitions
+// Note that we have to declare T just after impl so we can use T to specify that we’re implementing methods on the type Point<T>. By declaring T as a generic type after impl, Rust can identify that the type in the angle brackets in Point is a generic type rather than a concrete type.
+impl<T> Point<T> {
+    // implementing a method named x on the Point<T> struct that will return a reference to the x field of type T
+    fn x(&self) -> &T {
+        &self.x
+    }
+}
+
+// We can also specify constraints on generic types when defining methods on the type. We could, for example, implement methods only on Point<f32> instances rather than on Point<T> instances with any generic type, meaning we don’t declare any types after impl.
+impl Point<f32> {
+    // This code means the type Point<f32> will have a distance_from_origin method; other instances of Point<T> where T is not of type f32 will not have this method defined.
+    fn distance_from_origin(&self) -> f32 {
+        (self.x.powi(2) + self.y.powi(2)).sqrt()
+    }
+}
+
 fn main() {
     let number_list = vec![34, 50, 25, 100, 65];
 
@@ -34,7 +51,13 @@ fn main() {
     let result = largest(&char_list);
     println!("The largest char is {result}");
 
-    // the fields x and y must be the same type because both have the same generic data type T
+    // the fields x and y must be the same type because both have the same generic data type T, if the struct Point is declared only with Point<T>
     let integer = Point { x: 5, y: 10 };
     let float = Point { x: 1.0, y: 4.0 };
+    println!("p.x = {}", integer.x());
+
+    // To define a Point struct where x and y are both generics but could have different types, we can use multiple generic type parameters.
+    // let both_integer = Point { x: 5, y: 10 };
+    // let both_float = Point { x: 1.0, y: 4.0 };
+    // let integer_and_float = Point { x: 5, y: 4.0 };
 }

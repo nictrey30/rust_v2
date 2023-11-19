@@ -14,7 +14,7 @@ impl Rectangle {
     fn width(&self) -> bool {
         self.width > 0
     }
-    // getters are useful  because you can make the field private, but the method public, and thus enable read-only access to that field as a part of the type's public API.
+    // getters are useful because you can make the field private, but the method public, and thus enable read-only access to that field as a part of the type's public API.
 }
 fn main() {
     let rect1 = Rectangle {
